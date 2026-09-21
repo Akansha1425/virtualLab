@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Artificial Intelligence - NLP</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background-color: #1565c0;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        h2 {
+            color: #1565c0;
+        }
+
+        textarea {
+            width: 95%;
+            height: 120px;
+            padding: 15px;
+            font-size: 16px;
+            resize: none;
+        }
+
+        button {
+            background-color: #1565c0;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+
+        .feature {
+            display: inline-block;
+            width: 28%;
+            margin: 1%;
+            padding: 20px;
+            background-color: #e3f2fd;
+            vertical-align: top;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #1565c0;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>Natural Language Processing</h1>
+
+    <p>
+        An Application of Artificial Intelligence
+    </p>
+
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>What is NLP?</h2>
+
+        <p>
+            Natural Language Processing (NLP) is a branch of Artificial
+            Intelligence that enables computers to process and understand
+            human language.
+        </p>
+
+        <p>
+            NLP is used in chatbots, virtual assistants, translation
+            systems, search engines and text analysis applications.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Applications of NLP</h2>
+
+        <div class="feature">
+            <h3>Chatbots</h3>
+            <p>
+                Used to understand user questions and generate responses.
+            </p>
+        </div>
+
+        <div class="feature">
+            <h3>Translation</h3>
+            <p>
+                Used to translate text between different languages.
+            </p>
+        </div>
+
+        <div class="feature">
+            <h3>Sentiment Analysis</h3>
+            <p>
+                Used to identify positive, negative or neutral opinions.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Simple NLP Text Analyzer</h2>
+
+        <p>
+            Enter a sentence and the system will identify some
+            predefined keywords.
+        </p>
+
+        <textarea id="text"
+            placeholder="Example: I love learning artificial intelligence"></textarea>
+
+        <br>
+
+        <button onclick="analyzeText()">
+            Analyze Text
+        </button>
+
+        <div id="result">
+            Analysis result will appear here.
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Basic NLP Processing Steps</h2>
+
+        <ol>
+            <li>Input text</li>
+            <li>Tokenization</li>
+            <li>Text preprocessing</li>
+            <li>Feature extraction</li>
+            <li>Text analysis</li>
+            <li>Generate result</li>
+        </ol>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>Artificial Intelligence Practical</p>
+
+</footer>
+
+<script>
+
+function analyzeText() {
+
+    let text = document
+        .getElementById("text")
+        .value
+        .toLowerCase();
+
+    if (text.trim() === "") {
+
+        document.getElementById("result").innerHTML =
+            "Please enter some text.";
+
+        return;
+    }
+
+    let words = text.split(/\s+/);
+
+    let aiWords = [
+        "artificial",
+        "intelligence",
+        "machine",
+        "learning",
+        "computer",
+        "robot",
+        "algorithm",
+        "data"
+    ];
+
+    let found = [];
+
+    for (let word of aiWords) {
+
+        if (text.includes(word)) {
+            found.push(word);
+        }
+
+    }
+
+    let sentiment = "Neutral";
+
+    if (
+        text.includes("love") ||
+        text.includes("good") ||
+        text.includes("excellent") ||
+        text.includes("great")
+    ) {
+        sentiment = "Positive";
+    }
+
+    if (
+        text.includes("bad") ||
+        text.includes("hate") ||
+        text.includes("poor")
+    ) {
+        sentiment = "Negative";
+    }
+
+    document.getElementById("result").innerHTML =
+        "<b>Number of words:</b> " + words.length +
+        "<br><b>AI-related keywords:</b> " +
+        (found.length > 0 ? found.join(", ") : "None") +
+        "<br><b>Simple sentiment:</b> " + sentiment;
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+Machine Learning provides predictive mathematical modeling across large volumes of Data. Machine Learning includes Deep Learning as a specialized paradigm for handling non-linear representations. An optimized Algorithm evaluates feature weights to minimize empirical loss.

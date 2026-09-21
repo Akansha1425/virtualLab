@@ -1,0 +1,1 @@
+Deep Learning uses Neural Network architectures with multiple hidden layers to extract hierarchical abstractions from unstructured Data. These representations empower computer vision, speech recognition, and automated translation in contemporary Artificial Intelligence applications.

@@ -1,0 +1,1 @@
+Information Retrieval represents the science of locating relevant documents matching an information need. In classical retrieval, TF-IDF retrieves Documents by computing term frequency against inverse document frequency weights across the corpus.

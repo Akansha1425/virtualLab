@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Search Algorithm</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+        }
+
+        header {
+            background-color: #283593;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        h2 {
+            color: #283593;
+        }
+
+        button {
+            background-color: #283593;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #1a237e;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            margin: 10px;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8eaf6;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        pre {
+            background-color: #eeeeee;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            background-color: #283593;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Artificial Intelligence</h1>
+    <p>Search Algorithm Demonstration using BFS</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Introduction</h2>
+
+        <p>
+            Search algorithms are important techniques in Artificial
+            Intelligence for finding solutions to problems.
+            Breadth First Search (BFS) explores nodes level by level.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Breadth First Search</h2>
+
+        <p>
+            BFS uses a queue data structure. It starts from a selected
+            node and visits all its neighboring nodes before moving
+            to the next level.
+        </p>
+
+        <h3>Algorithm</h3>
+
+        <ol>
+            <li>Start from the selected node.</li>
+            <li>Add the node to the queue.</li>
+            <li>Remove a node from the queue.</li>
+            <li>Visit all unvisited neighboring nodes.</li>
+            <li>Add the neighboring nodes to the queue.</li>
+            <li>Repeat until the queue becomes empty.</li>
+        </ol>
+    </div>
+
+    <div class="card">
+        <h2>BFS Example</h2>
+
+        <p>Consider the following graph:</p>
+
+        <pre>
+        A
+       / \
+      B   C
+     / \   \
+    D   E   F
+        </pre>
+
+        <p>
+            Starting from node A, the BFS traversal is:
+        </p>
+
+        <pre>
+A → B → C → D → E → F
+        </pre>
+    </div>
+
+    <div class="card">
+        <h2>Interactive BFS</h2>
+
+        <p>
+            Enter the starting node:
+        </p>
+
+        <input type="text" id="startNode" placeholder="Enter A">
+
+        <button onclick="runBFS()">Run BFS</button>
+
+        <div id="result">
+            BFS result will appear here.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Time Complexity</h2>
+
+        <p>
+            The time complexity of BFS is O(V + E), where V is the
+            number of vertices and E is the number of edges.
+        </p>
+
+        <p>
+            BFS is useful in path finding, graph traversal,
+            network analysis and other AI problem-solving applications.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <p>Artificial Intelligence Practical</p>
+</footer>
+
+<script>
+
+    function runBFS() {
+
+        let start = document
+            .getElementById("startNode")
+            .value
+            .toUpperCase();
+
+        const graph = {
+            A: ["B", "C"],
+            B: ["A", "D", "E"],
+            C: ["A", "F"],
+            D: ["B"],
+            E: ["B"],
+            F: ["C"]
+        };
+
+        if (!graph[start]) {
+            document.getElementById("result").innerHTML =
+                "Please enter a valid node: A, B, C, D, E or F.";
+            return;
+        }
+
+        let queue = [start];
+        let visited = [];
+        let result = [];
+
+        while (queue.length > 0) {
+
+            let node = queue.shift();
+
+            if (!visited.includes(node)) {
+
+                visited.push(node);
+                result.push(node);
+
+                for (let neighbor of graph[node]) {
+
+                    if (!visited.includes(neighbor)) {
+                        queue.push(neighbor);
+                    }
+                }
+            }
+        }
+
+        document.getElementById("result").innerHTML =
+            "BFS Traversal: " + result.join(" → ");
+    }
+
+</script>
+
+</body>
+</html>

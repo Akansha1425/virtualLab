@@ -1,0 +1,1 @@
+Legal search systems analyze regulatory statutes, court judgments, and evidentiary Documents. Integrating Information Retrieval with Knowledge Graph technology enables attorneys to trace precedent relationships and statutory references across complex legal corpora.

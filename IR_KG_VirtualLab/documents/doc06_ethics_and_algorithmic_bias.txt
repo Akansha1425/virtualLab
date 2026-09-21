@@ -1,0 +1,1 @@
+In modern computational systems, Ethics addresses Bias within automated training datasets and decision models. Algorithmic Bias can produce discriminatory outcomes if left unmanaged. Establishing ethical guidelines is essential for trustworthy Artificial Intelligence.

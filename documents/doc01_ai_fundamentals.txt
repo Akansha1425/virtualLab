@@ -1,0 +1,1 @@
+Artificial Intelligence (AI) constitutes the study and engineering of computational agents capable of reasoning, problem-solving, and perception. Artificial Intelligence uses Machine Learning to learn from empirical Data rather than following hardcoded rules. High-performance systems employ an advanced Algorithm to detect patterns across multidimensional inputs.

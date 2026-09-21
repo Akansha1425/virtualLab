@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Expert System</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background-color: #6a1b9a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        h2 {
+            color: #6a1b9a;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0;
+        }
+
+        button {
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f3e5f5;
+            border-radius: 5px;
+            line-height: 1.7;
+        }
+
+        footer {
+            background-color: #6a1b9a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Artificial Intelligence Expert System</h1>
+    <p>Rule-Based Decision Making</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>What is an Expert System?</h2>
+
+        <p>
+            An expert system is an Artificial Intelligence system that
+            uses knowledge and rules to solve problems or provide
+            recommendations in a specific domain.
+        </p>
+
+        <p>
+            An expert system generally consists of a knowledge base,
+            inference engine and user interface.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Simple AI-Based Study Advisor</h2>
+
+        <p>
+            Select the conditions that describe your current study
+            situation.
+        </p>
+
+        <label>
+            <input type="checkbox" id="lowTime">
+            I have limited study time.
+        </label>
+
+        <label>
+            <input type="checkbox" id="weakConcept">
+            I have difficulty understanding concepts.
+        </label>
+
+        <label>
+            <input type="checkbox" id="examNear">
+            My examination is near.
+        </label>
+
+        <label>
+            <input type="checkbox" id="practice">
+            I need more programming practice.
+        </label>
+
+        <button onclick="generateAdvice()">
+            Get AI Recommendation
+        </button>
+
+        <div id="result">
+            Recommendation will appear here.
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Working of the Expert System</h2>
+
+        <ol>
+            <li>User provides information.</li>
+            <li>The system checks predefined rules.</li>
+            <li>The inference process selects matching rules.</li>
+            <li>The system generates a recommendation.</li>
+        </ol>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>Artificial Intelligence Practical</p>
+</footer>
+
+<script>
+
+function generateAdvice() {
+
+    let lowTime = document.getElementById("lowTime").checked;
+    let weakConcept = document.getElementById("weakConcept").checked;
+    let examNear = document.getElementById("examNear").checked;
+    let practice = document.getElementById("practice").checked;
+
+    let advice = "";
+
+    if (examNear) {
+        advice += "<p>Focus on important topics, previous questions and revision.</p>";
+    }
+
+    if (weakConcept) {
+        advice += "<p>Start with basic concepts and use simple examples before moving to advanced topics.</p>";
+    }
+
+    if (practice) {
+        advice += "<p>Practice programming problems and implement the concepts you have studied.</p>";
+    }
+
+    if (lowTime) {
+        advice += "<p>Prepare a priority-based study plan and focus on high-weightage topics.</p>";
+    }
+
+    if (advice === "") {
+        advice = "<p>Continue regular study and maintain a balanced learning schedule.</p>";
+    }
+
+    document.getElementById("result").innerHTML = advice;
+}
+
+</script>
+
+</body>
+</html>

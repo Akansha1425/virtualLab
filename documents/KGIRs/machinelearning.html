@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence - Machine Learning</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background-color: #00695c;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        h2 {
+            color: #00695c;
+        }
+
+        .type {
+            display: inline-block;
+            width: 28%;
+            margin: 1%;
+            padding: 20px;
+            background-color: #e0f2f1;
+            vertical-align: top;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #00695c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 10px;
+            margin: 8px;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0f2f1;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #00695c;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Machine Learning</h1>
+    <p>A Major Branch of Artificial Intelligence</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>What is Machine Learning?</h2>
+
+        <p>
+            Machine Learning is a branch of Artificial Intelligence that
+            enables computers to learn patterns from data and make
+            predictions or decisions without being explicitly programmed
+            for every situation.
+        </p>
+
+        <p>
+            Machine Learning is widely used in recommendation systems,
+            image recognition, spam detection, fraud detection and
+            prediction systems.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Types of Machine Learning</h2>
+
+        <div class="type">
+            <h3>Supervised Learning</h3>
+            <p>
+                The model learns from labelled data where the correct
+                output is already known.
+            </p>
+            <p>Example: House price prediction.</p>
+        </div>
+
+        <div class="type">
+            <h3>Unsupervised Learning</h3>
+            <p>
+                The model finds patterns or groups in data without
+                predefined output labels.
+            </p>
+            <p>Example: Customer clustering.</p>
+        </div>
+
+        <div class="type">
+            <h3>Reinforcement Learning</h3>
+            <p>
+                An agent learns by interacting with an environment
+                and receiving rewards or penalties.
+            </p>
+            <p>Example: Game-playing AI.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Machine Learning Process</h2>
+
+        <ol>
+            <li>Collect data</li>
+            <li>Preprocess the data</li>
+            <li>Select useful features</li>
+            <li>Train the model</li>
+            <li>Evaluate the model</li>
+            <li>Make predictions</li>
+        </ol>
+    </div>
+
+    <div class="card">
+        <h2>Simple Prediction Demo</h2>
+
+        <p>Enter number of hours studied:</p>
+
+        <input type="number" id="hours" placeholder="Example: 6">
+
+        <button onclick="predict()">Predict</button>
+
+        <div id="output">
+            Prediction will appear here.
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Artificial Intelligence Practical</p>
+</footer>
+
+<script>
+
+function predict() {
+
+    let hours = Number(document.getElementById("hours").value);
+
+    if (hours <= 0) {
+        document.getElementById("output").innerHTML =
+            "Please enter a valid number.";
+        return;
+    }
+
+    let marks = Math.min(100, Math.round(hours * 10 + 20));
+
+    document.getElementById("output").innerHTML =
+        "Estimated marks based on the simple demonstration model: "
+        + marks + "%";
+}
+
+</script>
+
+</body>
+</html>

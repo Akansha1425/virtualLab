@@ -1,0 +1,1 @@
+Automation uses Algorithm designs to drive precision manufacturing, warehouse routing, and autonomous logistics. Robotics integrates sensors, actuators, and Artificial Intelligence to execute complex physical tasks with high repeatability.
